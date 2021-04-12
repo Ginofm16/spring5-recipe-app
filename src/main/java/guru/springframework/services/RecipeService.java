@@ -15,5 +15,7 @@ public interface RecipeService {
     
     /*para guardar la entidad que regresa del nivel web.*/
     RecipeCommand saveRecipeCommand(RecipeCommand command);
+    
+    void deleteById(Long idToDelete);
 
 }
