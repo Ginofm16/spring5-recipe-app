@@ -11,6 +11,8 @@ public interface RecipeService {
 
     Recipe findById(Long l);
     
+    RecipeCommand findCommandById(Long l);
+    
     /*para guardar la entidad que regresa del nivel web.*/
     RecipeCommand saveRecipeCommand(RecipeCommand command);
 
