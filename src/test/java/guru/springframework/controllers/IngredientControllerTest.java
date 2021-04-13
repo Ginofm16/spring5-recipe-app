@@ -20,11 +20,15 @@ import guru.springframework.commands.IngredientCommand;
 import guru.springframework.commands.RecipeCommand;
 import guru.springframework.services.IngredientService;
 import guru.springframework.services.RecipeService;
+import guru.springframework.services.UnitOfMeasureService;
 
 public class IngredientControllerTest {
 
 	@Mock
     IngredientService ingredientService;
+
+    @Mock
+    UnitOfMeasureService unitOfMeasureService;
 
     @Mock
     RecipeService recipeService;
@@ -37,7 +41,7 @@ public class IngredientControllerTest {
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
-        controller = new IngredientController(recipeService, ingredientService);
+        controller = new IngredientController(ingredientService, recipeService, unitOfMeasureService);
         mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
     }
     @Test
